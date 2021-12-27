@@ -26,14 +26,14 @@ export default function App() {
   });
   if (!fontsLoaded) {
     console.log("font loading");
-    return (<Home />);
+    return (<Home props={fontsLoaded}/>);
   } else {
     return (
       <View>
       <StatusBar hidden />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Home" component={Home}/>
         </Stack.Navigator>
       </NavigationContainer>
       </View>
