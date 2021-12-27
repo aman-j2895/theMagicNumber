@@ -31,12 +31,12 @@ export default function App() {
     return (
       <View>
       <StatusBar hidden />
-      <Login/>
-      {/* <NavigationContainer>
+      {/* <Login/> */}
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home}/>
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
       </View>
     );
   }
