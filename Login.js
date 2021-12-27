@@ -2,9 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView,StyleSheet, Text, View,Image,TextInput,TouchableOpacity } from 'react-native';
 import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 import { CheckBox } from 'react-native-web';
+import React, { useState } from "react";
 
 
 export default function Login() {
+  const [isSelected, setSelection] = useState(false);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
     <View style={{background:"#fff",height:'100vh',padding:50}}>
@@ -39,12 +42,16 @@ export default function Login() {
         <View style={styles.checkboxContainer}>
         <CheckBox
           style={styles.checkbox}
+          onValueChange={setSelection}
+
+          value={isSelected}
+
         />
         <Text style={styles.label}>I Agree to the terms</Text>
       </View>
   
         <TouchableOpacity style={{background:'tomato',width:'100%',alignItems:'center',padding:12,borderRadius:10}}>  
-          <Text style={{fontFamily: 'Ubuntu_400Regular',color:'white'}}>LOGIN</Text>
+          <Text style={{fontFamily: 'Ubuntu_400Regular',color:'white'}}>Register</Text>
         </TouchableOpacity>
       </View>
 
