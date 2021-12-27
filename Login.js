@@ -1,17 +1,56 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView,StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView,StyleSheet, Text, View,Image,TextInput,TouchableOpacity } from 'react-native';
 import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
+import { CheckBox } from 'react-native-web';
 
 
 export default function Login() {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-        <View style={{background:"#1b202c",height:'100vh'}}>
-          <View>
-            <Text style={{ fontFamily: 'Ubuntu_400Regular',color:"white"}}>Font is loaded</Text>
-          </View>
-        </View>  
-    </SafeAreaView>
+    <View style={{background:"#fff",height:'100vh',padding:50}}>
+      <View style={{alignItems:"center"}}>
+        <Image
+          style={{width:100,height:100,position:'relative',left:5}}
+          source={{
+            uri: require('./assets/logo.jpg'),
+          }}
+        ></Image>
+        <Text style={{ fontFamily: 'Ubuntu_400Regular', fontSize: 15 ,color:"tomato"}}>Register At</Text>
+        <Text style={{ fontFamily: 'Ubuntu_400Regular', fontSize: 40 ,color:"tomato", paddingBottom:"3vh"}}>Sports Mate</Text>
+      </View>
+
+      <Text style={styles.textStyle}>Name</Text>
+      <View style={{alignItems:"center"}}>         
+        <TextInput style={styles.inputfield}/>
+      </View>
+
+        <Text style={styles.textStyle}>Email or Phone</Text>
+      <View style={{alignItems:"center"}}>         
+        <TextInput style={styles.inputfield}/>
+      </View>
+
+      <Text style={styles.textStyle}>Password</Text>
+
+
+
+      <View style={{alignItems:"center"}}>  
+        <TextInput style={styles.inputfield} secureTextEntry={true} />
+       
+        <View style={styles.checkboxContainer}>
+        <CheckBox
+          style={styles.checkbox}
+        />
+        <Text style={styles.label}>I Agree to the terms</Text>
+      </View>
+  
+        <TouchableOpacity style={{background:'tomato',width:'100%',alignItems:'center',padding:12,borderRadius:10}}>  
+          <Text style={{fontFamily: 'Ubuntu_400Regular',color:'white'}}>LOGIN</Text>
+        </TouchableOpacity>
+      </View>
+
+
+    </View>  
+</SafeAreaView>
   );
 }
 
@@ -22,4 +61,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  checkboxContainer: {
+    flexDirection: "row",
+    marginBottom: 20,
+    alignSelf: "left ",
+
+  },
+  checkbox: {
+    // alignSelf: "center",
+  },
+  textStyle : {
+    fontFamily: 'Ubuntu_400Regular',
+    justifyContent:'left',
+    color:'grey',
+    fontSize:12,
+    marginTop:10
+  },
+  inputfield  : {height:50,borderRadius:5,marginTop:5,marginBottom:20,width:"100%",borderWidth:1,borderColor:'lightgrey',textIndent: "10px" }
+
 });

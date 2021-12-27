@@ -9,7 +9,7 @@ export default function Home() {
         <View style={{background:"#fff",height:'100vh',padding:50}}>
           <View style={{alignItems:"center"}}>
             <Image
-              style={{width:100,height:100,position:'relative',left:5,marginTop:"15vh"}}
+              style={{width:100,height:100,position:'relative',left:5}}
               source={{
                 uri: require('./assets/logo.jpg'),
               }}
