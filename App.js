@@ -26,7 +26,7 @@ export default function App() {
   });
   if (!fontsLoaded) {
     console.log("font loading");
-    return (<Home props={fontsLoaded}/>);
+    return (<Home/>);
   } else {
     return (
       <View>
@@ -34,7 +34,7 @@ export default function App() {
       {/* <Login/> */}
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home}/>
+          <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
       </NavigationContainer>
       </View>
